@@ -21,7 +21,7 @@ def rec_system(df, cluster_name = 'all', customer_state = 'all', n_rec = 10):
 
         if cluster_name == 'all':
             all_cluster = pd.DataFrame(df.groupby(['product_category'])['product_id'].value_counts())
-            all_cluster = all_cluster.rename({'product_id': 'purchase_count'}, axis = 1).reset_index().sort_values(by = 'purchase_count', ascending = False).reset_index(drop = True)
+            all_cluster = all_cluster.rename({'product_id': 'count'}, axis = 1).reset_index().sort_values(by = 'count', ascending = False).reset_index(drop = True)
 
             return all_cluster[['product_category', 'product_id']].head(n_rec)
 
@@ -29,7 +29,7 @@ def rec_system(df, cluster_name = 'all', customer_state = 'all', n_rec = 10):
             
             df_cluster = df.loc[df['cluster_name'] == cluster_name]
             df_cluster = pd.DataFrame(df_cluster.groupby(['product_category'])['product_id'].value_counts())
-            df_cluster = df_cluster.rename({'product_id': 'purchase_count'}, axis = 1).reset_index().sort_values(by = 'purchase_count', ascending = False).reset_index(drop = True)
+            df_cluster = df_cluster.rename({'product_id': 'count'}, axis = 1).reset_index().sort_values(by = 'count', ascending = False).reset_index(drop = True)
 
             return df_cluster[['product_category', 'product_id']].head(n_rec)
 
@@ -39,7 +39,7 @@ def rec_system(df, cluster_name = 'all', customer_state = 'all', n_rec = 10):
 
         if cluster_name == 'all':
             all_cluster = pd.DataFrame(df.groupby(['product_category'])['product_id'].value_counts())
-            all_cluster = all_cluster.rename({'product_id': 'purchase_count'}, axis = 1).reset_index().sort_values(by = 'purchase_count', ascending = False).reset_index(drop = True)
+            all_cluster = all_cluster.rename({'product_id': 'count'}, axis = 1).reset_index().sort_values(by = 'count', ascending = False).reset_index(drop = True)
 
             return all_cluster[['product_category', 'product_id']].head(n_rec)
 
@@ -47,7 +47,7 @@ def rec_system(df, cluster_name = 'all', customer_state = 'all', n_rec = 10):
             
             df_cluster = df.loc[df['cluster_name'] == cluster_name]
             df_cluster = pd.DataFrame(df_cluster.groupby(['product_category'])['product_id'].value_counts())
-            df_cluster = df_cluster.rename({'product_id': 'purchase_count'}, axis = 1).reset_index().sort_values(by = 'purchase_count', ascending = False).reset_index(drop = True)
+            df_cluster = df_cluster.rename({'product_id': 'count'}, axis = 1).reset_index().sort_values(by = 'count', ascending = False).reset_index(drop = True)
             
             return df_cluster[['product_category', 'product_id']].head(n_rec)
 
